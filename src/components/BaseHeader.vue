@@ -100,7 +100,7 @@
                     display: inline-block;
                     padding: 1.875rem 1.25rem;
                     text-decoration: none;
-                    color: var(--color-text);
+                    color: var(--primary-color-text);
                 }
                 .active a {
                     color: var(--primary-color);
