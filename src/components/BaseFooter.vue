@@ -32,44 +32,44 @@
                     <div class="footer-center__col">
                         <h4>Dc comics</h4>
                         <ul>
-                            <li>Characters</li>
-                            <li>Comics</li>
-                            <li>Movies</li>
-                            <li>TV</li>
-                            <li>Games</li>
-                            <li>Videos</li>
-                            <li>News</li>
+                            <li><a href="#">Characters</a></li>
+                            <li><a href="#">Comics</a></li>
+                            <li><a href="#">Movies</a></li>
+                            <li><a href="#">TV</a></li>
+                            <li><a href="#">Games</a></li>
+                            <li><a href="#">Videos</a></li>
+                            <li><a href="#">News</a></li>
                         </ul>
                         <h4>Shop</h4>
                         <ul>
-                            <li>Shop DC</li>
-                            <li>Shop DC Collectibles</li>
+                            <li><a href="#">Shop DC</a></li>
+                            <li><a href="#">Shop DC Collectibles</a></li>
                         </ul>
                     </div>
                     <div class="footer-center__col">
                         <h4>Dc</h4>
                         <ul>
-                            <li>Terms Of Use</li>
-                            <li>Privacy policy</li>
-                            <li>Ad Choices</li>
-                            <li>Advertising</li>
-                            <li>Jobs</li>
-                            <li>Subscriptions</li>
-                            <li>Talent Workshops</li>
-                            <li>CPSC Certificates</li>
-                            <li>Ratings</li>
-                            <li>Shop Help</li>
-                            <li>Contact Us</li>
+                            <li><a href="#">Terms Of Use</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Ad Choices</a></li>
+                            <li><a href="#">Advertising</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Subscriptions</a></li>
+                            <li><a href="#">Talent Workshops</a></li>
+                            <li><a href="#">CPSC Certificates</a></li>
+                            <li><a href="#">Ratings</a></li>
+                            <li><a href="#">Shop Help</a></li>
+                            <li><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="footer-center__col">
                         <h4>Sites</h4>
                         <ul>
-                            <li>DC</li>
-                            <li>MAD Magazine</li>
-                            <li>DC Kids</li>
-                            <li>DC Universe</li>
-                            <li>DC Power Visa</li>
+                            <li><a href="#">DC</a></li>
+                            <li><a href="#">MAD Magazine</a></li>
+                            <li><a href="#">DC Kids</a></li>
+                            <li><a href="#">DC Universe</a></li>
+                            <li><a href="#">DC Power Visa</a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,11 +81,11 @@
                     <button>Sign-up now!</button>
                     <div class="footer-bottom__social">
                         <span>Follow us</span>
-                        <img src="../assets/img/footer-facebook.png" alt="facebook">
-                        <img src="../assets/img/footer-twitter.png" alt="twitter">
-                        <img src="../assets/img/footer-youtube.png" alt="youtube">
-                        <img src="../assets/img/footer-pinterest.png" alt="pinterest">
-                        <img src="../assets/img/footer-periscope.png" alt="periscope">
+                        <a href="#"><img src="../assets/img/footer-facebook.png" alt="facebook"></a>
+                        <a href="#"><img src="../assets/img/footer-twitter.png" alt="twitter"></a>
+                        <a href="#"><img src="../assets/img/footer-youtube.png" alt="youtube"></a>
+                        <a href="#"><img src="../assets/img/footer-pinterest.png" alt="pinterest"></a>
+                        <a href="#"><img src="../assets/img/footer-periscope.png" alt="periscope"></a>
                     </div>
                 </div>
             </div>
@@ -150,8 +150,12 @@ export default {
 
         ul li {
             list-style-type: none;
-            font-size: .875rem;
+        }
+
+        ul li a {
+            text-decoration: none;
             color: var(--tertiary-color-text);
+            font-size: .875rem;
         }
     }
 }
@@ -171,6 +175,7 @@ export default {
             background-color: transparent;
             color: var(--secondary-color-text);
             text-transform: uppercase;
+            cursor: pointer;
         }
     }
 
@@ -185,7 +190,7 @@ export default {
             margin-right: 1.5625rem;
         }
 
-        & img {
+        & a img {
             margin-right: .9375rem;
         }
     }
