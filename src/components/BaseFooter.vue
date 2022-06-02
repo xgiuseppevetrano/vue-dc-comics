@@ -30,16 +30,47 @@
             <div class="container">
                 <div class="footer-center__row">
                     <div class="footer-center__col">
-
+                        <h4>Dc comics</h4>
+                        <ul>
+                            <li>Characters</li>
+                            <li>Comics</li>
+                            <li>Movies</li>
+                            <li>TV</li>
+                            <li>Games</li>
+                            <li>Videos</li>
+                            <li>News</li>
+                        </ul>
+                        <h4>Shop</h4>
+                        <ul>
+                            <li>Shop DC</li>
+                            <li>Shop DC Collectibles</li>
+                        </ul>
                     </div>
                     <div class="footer-center__col">
-                        
+                        <h4>Dc</h4>
+                        <ul>
+                            <li>Terms Of Use</li>
+                            <li>Privacy policy</li>
+                            <li>Ad Choices</li>
+                            <li>Advertising</li>
+                            <li>Jobs</li>
+                            <li>Subscriptions</li>
+                            <li>Talent Workshops</li>
+                            <li>CPSC Certificates</li>
+                            <li>Ratings</li>
+                            <li>Shop Help</li>
+                            <li>Contact Us</li>
+                        </ul>
                     </div>
                     <div class="footer-center__col">
-                        
-                    </div>
-                    <div class="footer-center__col-big">
-                        
+                        <h4>Sites</h4>
+                        <ul>
+                            <li>DC</li>
+                            <li>MAD Magazine</li>
+                            <li>DC Kids</li>
+                            <li>DC Universe</li>
+                            <li>DC Power Visa</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -95,20 +126,34 @@ export default {
 
 .footer-center {
     background-image: url(../assets/img/footer-bg.jpg);
-    padding: 1.25rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--secondary-color-text);
 
     &__row {
         display: flex;
+        background-image: url('../assets/img/dc-logo-bg.png');
+        background-repeat: no-repeat;
+        background-position: center right;
     }
 
     &__col {
         width: 10%;
-    }
+        margin: 0 .625rem;
+        padding: 1.875rem 0;
 
-    &__col-big {
-        width: 70%;
-    }
+        h4 {
+            margin-bottom: .625rem;
+            margin-top: .9375rem;
+            text-transform: uppercase;
+        }
 
+        ul li {
+            list-style-type: none;
+            font-size: .875rem;
+            color: var(--tertiary-color-text);
+        }
+    }
 }
 
 .footer-bottom {
