@@ -5,23 +5,23 @@
                 <div class="footer-top__link">
                     <a href="#" class="footer-top__item">
                         <img class="footer-top__item-img" src="../assets/img/buy-comics-digital-comics.png" alt="digital Comics">
-                        <span>Digital Comics</span>
+                        <small>Digital Comics</small>
                     </a>
                     <a href="#" class="footer-top__item">
                         <img class="footer-top__item-img" src="../assets/img/buy-comics-merchandise.png" alt="dc merchandise">
-                        <span>Dc merchandise</span>
+                        <small>Dc merchandise</small>
                     </a>
                     <a href="#" class="footer-top__item">
                         <img class="footer-top__item-img" src="../assets/img/buy-comics-subscriptions.png" alt="subscriptions">
-                        <span>Subscription</span>
+                        <small>Subscription</small>
                     </a>
                     <a href="#" class="footer-top__item">
                         <img class="footer-top__item-img" src="../assets/img/buy-comics-shop-locator.png" alt="comics shop locator">
-                        <span>Comics shop locator</span>
+                        <small>Comics shop locator</small>
                     </a>
                     <a href="#" class="footer-top__item">
                         <img class="footer-top__item-img" src="../assets/img/buy-dc-power-visa.svg" alt="dc power pisa">
-                        <span>Dc power pisa</span>
+                        <small>Dc power pisa</small>
                     </a>
                 </div>
             </div>
