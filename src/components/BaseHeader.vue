@@ -3,11 +3,13 @@
         <div class="container">
             <div class="header">
                 <div class="header__logo">
-                    <img src="../assets/img/dc-logo.png"/>
+                    <img class="header__logo-img" src="../assets/img/dc-logo.png"/>
                 </div>
                 <nav class="header__nav">
-                    <ul>
-                        <li v-for="(link, index) in links" :key="index" :class="{active : link.isActive}" @click="navActive(index)"><a :href="link.href">{{link.text}}</a></li>
+                    <ul class="header__nav-item">
+                        <li class="header__nav-list" v-for="(link, index) in links" :key="index" :class="{active : link.isActive}" @click="navActive(index)">
+                            <a class="header__nav-link" :href="link.href">{{link.text}}</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -84,44 +86,42 @@
 </script>
 
 <style lang="scss" scoped>
-    header {
-        position: relative;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &__logo {
-                img {
-                    height: 4.375rem;
+        &__logo-img {
+            height: 4.375rem;
+        }
+        
+        &__nav {
+            &-item {
+                display: flex;
+                justify-content: center;
+                list-style-type: none;
+                text-transform: uppercase;
+                font-size: .875rem;
+                font-weight: 500;
+            }
+
+            &-link {
+                display: inline-block;
+                padding: 2.1875rem 0;
+                text-decoration: none;
+                color: var(--primary-color-text);
+                border-bottom: .3125rem solid transparent;
+                margin: 0 .9375rem;
+
+                &:hover {
+                    color: var(--primary-color);
+                    border-color: var(--primary-color);
                 }
             }
-            
-            &__nav {
-                ul {
-                    display: flex;
-                    justify-content: center;
-                    list-style-type: none;
-                    text-transform: uppercase;
-                    font-size: .875rem;
-                    font-weight: 500;
-                    a {
-                        display: inline-block;
-                        padding: 2.1875rem 0;
-                        text-decoration: none;
-                        color: var(--primary-color-text);
-                        border-bottom: .3125rem solid transparent;
-                        margin: 0 .9375rem;
-                    }
-                    .active a {
-                        color: var(--primary-color);
-                        border-color: var(--primary-color);
-                    }
-                    a:hover {
-                        color: var(--primary-color);
-                        border-color: var(--primary-color);
-                    }
-                }
+
+            .active a {
+                color: var(--primary-color);
+                border-color: var(--primary-color);
             }
         }
     }
