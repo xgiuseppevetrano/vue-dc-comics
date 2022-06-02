@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
     main {
         background-color: var(--secondary-color);
-        padding: 1.875rem;
+        padding: 2.5rem;
         text-align: center;
         color: var(--secondary-color-text);
         font-weight: 500;

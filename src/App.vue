@@ -16,11 +16,12 @@ export default {
   components: {
     BaseHeader,
     BaseMain,
-    BaseFooter
+    BaseFooter,
   }
 }
 </script>
 
 <style lang="scss">
   @import './assets/style/global.scss';
+  
 </style>

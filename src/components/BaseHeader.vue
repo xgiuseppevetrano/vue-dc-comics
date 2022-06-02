@@ -1,16 +1,18 @@
 <template>
-    <div class="container">
-        <header class="header">
-            <div class="header__logo">
-                <img src="../assets/img/dc-logo.png"/>
+    <header>
+        <div class="container">
+            <div class="header">
+                <div class="header__logo">
+                    <img src="../assets/img/dc-logo.png"/>
+                </div>
+                <nav class="header__nav">
+                    <ul>
+                        <li v-for="(link, index) in links" :key="index" :class="{active : link.isActive}"><a :href="link.href">{{link.text}}</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="header__nav">
-                <ul>
-                    <li v-for="(link, index) in links" :key="index" :class="{active : link.isActive}"><a :href="link.url">{{link.text}}</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -21,52 +23,52 @@
                 links: [
                     {
                         text: "Characters",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Comics",
-                        url: "#",
+                        href: "#",
                         isActive: true,
                     },
                     {
                         text: "Movie",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Tv",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Games",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Collectibles",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Videos",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Fans",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "News",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                     {
                         text: "Shop",
-                        url: "#",
+                        href: "#",
                         isActive: false,
                     },
                 ],
@@ -76,34 +78,39 @@
 </script>
 
 <style lang="scss" scoped>
-    .header {
+    header {
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.25rem;
 
-        &__logo {
-            img {
-                height: 3.75rem;
-            }
-        }
-        &__nav {
-            ul {
-                display: flex;
-                justify-content: center;
-                list-style-type: none;
-                text-transform: uppercase;
-                font-size: .875rem;
-                font-weight: 500;
-                a {
-                    display: inline-block;
-                    padding: 1.875rem 1.25rem;
-                    text-decoration: none;
-                    color: var(--primary-color-text);
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__logo {
+                img {
+                    height: 4.375rem;
                 }
-                .active a {
-                    color: var(--primary-color);
+            }
+            
+            &__nav {
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    list-style-type: none;
+                    text-transform: uppercase;
+                    font-size: .875rem;
+                    font-weight: 500;
+                    a {
+                        display: inline-block;
+                        padding: 2.1875rem 0;
+                        text-decoration: none;
+                        color: var(--primary-color-text);
+                        border-bottom: .3125rem solid transparent;
+                        margin: 0 .9375rem;
+                    }
+                    .active a {
+                        color: var(--primary-color);
+                        border-color: var(--primary-color);
+                    }
                 }
             }
         }
