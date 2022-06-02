@@ -76,6 +76,7 @@
         },
         methods: {
             navActive(index) {
+                this.links.forEach((link) => link.isActive = false);
                 this.links[index].isActive = !this.links[index].isActive;
             }
         }
