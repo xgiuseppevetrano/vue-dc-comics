@@ -35,7 +35,7 @@
                             <li><a href="#">Characters</a></li>
                             <li><a href="#">Comics</a></li>
                             <li><a href="#">Movies</a></li>
-                            <li><a href="#">TV</a></li>
+                            <li><a href="#">TV</a></li>          
                             <li><a href="#">Games</a></li>
                             <li><a href="#">Videos</a></li>
                             <li><a href="#">News</a></li>
@@ -96,6 +96,57 @@
 <script>
 export default {
     name: 'BaseFooter',
+    data() {
+        return {
+            links: [
+                {
+                    title: 'Dc comics',
+                    text: [
+                        'Characters',
+                        'Comics',
+                        'Movies',
+                        'TV',
+                        'Games',
+                        'Videos',
+                        'News'
+                    ]
+                },
+                {
+                    title: 'Shop',
+                    text: [
+                        'Shop DC',
+                        'Collectibles',
+                    ]
+                },
+                {
+                    title: 'Dc',
+                    text: [
+                        'Terms Of Use',
+                        'Privacy policy',
+                        'Ad Choices',
+                        'Advertising',
+                        'Jobs',
+                        'Subscriptions',
+                        'Talent Workshops',
+                        'CPSC Certificates',
+                        'Ratings',
+                        'Shop Help',
+                        'Contact Us'
+                    ]
+                },
+                {
+                    title: 'Sites',
+                    text: [
+                        'DC',
+                        'MAD Magazine',
+                        'DC Kids',
+                        'DC Universe',
+                        'DC Power Visa'
+                    ]
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -107,7 +158,7 @@ export default {
     &__link {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     &__item {
@@ -119,7 +170,7 @@ export default {
 
         &-img {
             height: 2.5rem;
-            margin-right: .9375rem;
+            margin: 0 .9375rem;
         }
     }
 }
@@ -184,7 +235,7 @@ export default {
 
         & button:hover {
             background-color: var(--primary-color);
-            transition: 1s;
+            transition: 0.5s;
         }
     }
 
