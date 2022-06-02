@@ -7,7 +7,7 @@
                 </div>
                 <nav class="header__nav">
                     <ul>
-                        <li v-for="(link, index) in links" :key="index" :class="{active : link.isActive}"><a :href="link.href">{{link.text}}</a></li>
+                        <li v-for="(link, index) in links" :key="index" :class="{active : link.isActive}" @click="navActive(index)"><a :href="link.href">{{link.text}}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -73,6 +73,11 @@
                     },
                 ],
             }
+        },
+        methods: {
+            navActive(index) {
+                this.links[index].isActive = !this.links[index].isActive;
+            }
         }
     }
 </script>
@@ -108,6 +113,10 @@
                         margin: 0 .9375rem;
                     }
                     .active a {
+                        color: var(--primary-color);
+                        border-color: var(--primary-color);
+                    }
+                    a:hover {
                         color: var(--primary-color);
                         border-color: var(--primary-color);
                     }
