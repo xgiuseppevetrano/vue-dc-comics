@@ -43,7 +43,7 @@
                         <h4>Shop</h4>
                         <ul>
                             <li><a href="#">Shop DC</a></li>
-                            <li><a href="#">Shop DC Collectibles</a></li>
+                            <li><a href="#">Collectibles</a></li>
                         </ul>
                     </div>
                     <div class="footer-center__col">
@@ -157,6 +157,10 @@ export default {
             color: var(--tertiary-color-text);
             font-size: .875rem;
         }
+
+        ul li a:hover {
+            color: var(--primary-color);
+        }
     }
 }
 
@@ -177,6 +181,11 @@ export default {
             text-transform: uppercase;
             cursor: pointer;
         }
+
+        & button:hover {
+            background-color: var(--primary-color);
+            transition: 1s;
+        }
     }
 
     &__social {
@@ -192,6 +201,11 @@ export default {
 
         & a img {
             margin-right: .9375rem;
+        }
+
+        & a:hover {
+            opacity: 0.7;
+            transition: 0.5s;
         }
     }
 }
