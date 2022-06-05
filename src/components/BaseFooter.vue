@@ -3,25 +3,9 @@
         <div class="footer-top">
             <div class="container">
                 <div class="footer-top__link">
-                    <a href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" src="../assets/img/buy-comics-digital-comics.png" alt="digital Comics">
-                        <small>Digital Comics</small>
-                    </a>
-                    <a href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" src="../assets/img/buy-comics-merchandise.png" alt="dc merchandise">
-                        <small>Dc merchandise</small>
-                    </a>
-                    <a href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" src="../assets/img/buy-comics-subscriptions.png" alt="subscriptions">
-                        <small>Subscription</small>
-                    </a>
-                    <a href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" src="../assets/img/buy-comics-shop-locator.png" alt="comics shop locator">
-                        <small>Comics shop locator</small>
-                    </a>
-                    <a href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" src="../assets/img/buy-dc-power-visa.svg" alt="dc power pisa">
-                        <small>Dc power pisa</small>
+                    <a v-for="(shopLink, index) in shopLinks" :key="index" href="#" class="footer-top__item">
+                        <img class="footer-top__item-img" :src="require(shopLink.src)" :alt="shopLink.name">
+                        <small>{{shopLink.name}}</small>
                     </a>
                 </div>
             </div>
@@ -29,47 +13,12 @@
         <div class="footer-center">
             <div class="container">
                 <div class="footer-center__row">
-                    <div class="footer-center__col">
-                        <h4>Dc comics</h4>
+                    <div class="footer-center__col" v-for="(link, index) in links" :key="index">
+                        <h4 class="footer-center__col-title">{{link.title}}</h4>
                         <ul>
-                            <li><a href="#">Characters</a></li>
-                            <li><a href="#">Comics</a></li>
-                            <li><a href="#">Movies</a></li>
-                            <li><a href="#">TV</a></li>          
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Videos</a></li>
-                            <li><a href="#">News</a></li>
-                        </ul>
-                        <h4>Shop</h4>
-                        <ul>
-                            <li><a href="#">Shop DC</a></li>
-                            <li><a href="#">Collectibles</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-center__col">
-                        <h4>Dc</h4>
-                        <ul>
-                            <li><a href="#">Terms Of Use</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Ad Choices</a></li>
-                            <li><a href="#">Advertising</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Subscriptions</a></li>
-                            <li><a href="#">Talent Workshops</a></li>
-                            <li><a href="#">CPSC Certificates</a></li>
-                            <li><a href="#">Ratings</a></li>
-                            <li><a href="#">Shop Help</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-center__col">
-                        <h4>Sites</h4>
-                        <ul>
-                            <li><a href="#">DC</a></li>
-                            <li><a href="#">MAD Magazine</a></li>
-                            <li><a href="#">DC Kids</a></li>
-                            <li><a href="#">DC Universe</a></li>
-                            <li><a href="#">DC Power Visa</a></li>
+                            <li class="footer-center__col-item" v-for="(text, index) in link.texts" :key="index">
+                                <a class="footer-center__col-link" href="#">{{text}}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -78,14 +27,12 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom__wrapper">
-                    <button>Sign-up now!</button>
+                    <button class="footer-bottom__button">Sign-up now!</button>
                     <div class="footer-bottom__social">
-                        <span>Follow us</span>
-                        <a href="#"><img src="../assets/img/footer-facebook.png" alt="facebook"></a>
-                        <a href="#"><img src="../assets/img/footer-twitter.png" alt="twitter"></a>
-                        <a href="#"><img src="../assets/img/footer-youtube.png" alt="youtube"></a>
-                        <a href="#"><img src="../assets/img/footer-pinterest.png" alt="pinterest"></a>
-                        <a href="#"><img src="../assets/img/footer-periscope.png" alt="periscope"></a>
+                        <span class="footer-bottom__social-text">Follow us</span>
+                        <a v-for="(social, index) in socials" :key="index" class="footer-bottom__social-link" href="#">
+                            <img class="footer-bottom__social-img" :src="require(social.src)" :alt="social.name">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -98,10 +45,33 @@ export default {
     name: 'BaseFooter',
     data() {
         return {
+            shopLinks: [
+                {
+                    name: 'Digital Comics',
+                    src: '../assets/img/buy-comics-digital-comics.png'
+                },
+                {
+                    name: 'Dc merchandise',
+                    src: '../assets/img/buy-comics-merchandise.png'
+                },
+                {
+                    name: 'Subscription',
+                    src: '../assets/img/buy-comics-subscriptions.png'
+                },
+                {
+                    name: 'Comics shop locator',
+                    src: '../assets/img/buy-comics-shop-locator.png'
+                },
+                {
+                    name: 'Dc power pisa',
+                    src: '../assets/img/buy-dc-power-visa.svg'
+                }
+    
+            ],
             links: [
                 {
                     title: 'Dc comics',
-                    text: [
+                    texts: [
                         'Characters',
                         'Comics',
                         'Movies',
@@ -113,14 +83,14 @@ export default {
                 },
                 {
                     title: 'Shop',
-                    text: [
+                    texts: [
                         'Shop DC',
                         'Collectibles',
                     ]
                 },
                 {
                     title: 'Dc',
-                    text: [
+                    texts: [
                         'Terms Of Use',
                         'Privacy policy',
                         'Ad Choices',
@@ -136,13 +106,35 @@ export default {
                 },
                 {
                     title: 'Sites',
-                    text: [
+                    texts: [
                         'DC',
                         'MAD Magazine',
                         'DC Kids',
                         'DC Universe',
                         'DC Power Visa'
                     ]
+                }
+            ],
+            socials: [
+                {
+                    name: 'facebook',
+                    src: '../assets/img/footer-facebook.png'
+                },
+                {
+                    name: 'twitter',
+                    src: '../assets/img/footer-twitter.png'
+                },
+                {
+                    name: 'youtube',
+                    src: '../assets/img/footer-youtube.png'
+                },
+                {
+                    name: 'pinterest',
+                    src: '../assets/img/footer-pinterest.png'
+                },
+                {
+                    name: 'periscope',
+                    src: '../assets/img/footer-periscope.png'
                 }
             ]
         }
@@ -176,7 +168,7 @@ export default {
 }
 
 .footer-center {
-    background-image: url(../assets/img/footer-bg.jpg);
+    background-image: url('../assets/img/footer-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--secondary-color-text);
@@ -193,23 +185,23 @@ export default {
         margin: 0 .625rem;
         padding: 1.875rem 0;
 
-        h4 {
+        &-title {
             margin-bottom: .625rem;
             margin-top: .9375rem;
             text-transform: uppercase;
         }
 
-        ul li {
+        &-item {
             list-style-type: none;
         }
 
-        ul li a {
+        &-link{
             text-decoration: none;
             color: var(--tertiary-color-text);
             font-size: .875rem;
         }
 
-        ul li a:hover {
+        &-link:hover {
             color: var(--primary-color);
         }
     }
@@ -223,40 +215,41 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
 
-        & button {
-            padding: .625rem;
-            border: .125rem solid var(--primary-color);
-            background-color: transparent;
-            color: var(--secondary-color-text);
-            text-transform: uppercase;
-            cursor: pointer;
-        }
+    &__button {
+        padding: .625rem;
+        border: .125rem solid var(--primary-color);
+        background-color: transparent;
+        color: var(--secondary-color-text);
+        text-transform: uppercase;
+        cursor: pointer;
+    }
 
-        & button:hover {
-            background-color: var(--primary-color);
-            transition: 0.5s;
-        }
+    &__button:hover {
+        background-color: var(--primary-color);
+        transition: 0.5s;
     }
 
     &__social {
         display: flex;
         align-items: center;
 
-        & span {
+        &-text {
             text-transform: uppercase;
             font-weight: 500;
             color: var(--primary-color);
             margin-right: 1.5625rem;
+            cursor: pointer;
         }
 
-        & a img {
-            margin-right: .9375rem;
-        }
-
-        & a:hover {
+        &-link:hover {
             opacity: 0.7;
             transition: 0.5s;
+        }
+
+        &-img {
+            margin-right: .9375rem;
         }
     }
 }
