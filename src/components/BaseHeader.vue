@@ -7,8 +7,8 @@
                 </div>
                 <nav class="header__nav">
                     <ul class="header__nav-item">
-                        <li class="header__nav-list" v-for="(link, index) in links" :key="index" :class="{active : link.isActive}" @click="navActive(index)">
-                            <a class="header__nav-link" :href="link.href">{{link.text}}</a>
+                        <li class="header__nav-list" v-for="(link, index) in links" :key="index" @click="navActive(index)">
+                            <a class="header__nav-link" :class="{active : link.isActive}" :href="link.href">{{link.text}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -117,12 +117,13 @@
                     color: var(--primary-color);
                     border-color: var(--primary-color);
                 }
+
+                &.active{
+                    color: var(--primary-color);
+                    border-color: var(--primary-color);
+                }
             }
 
-            .active a {
-                color: var(--primary-color);
-                border-color: var(--primary-color);
-            }
         }
     }
 </style>
