@@ -1,24 +1,23 @@
 <template>
-    <main>
-        <section class="jumbotron"></section>
-        <section class="comics">
-            <div class="container">
-                <button class="comics__button comics__button--position">Current Series</button>
-                <div class="comics__cards">
-                    <div class="comics__cards-item" v-for="(comic, index) in comics" :key="index">
-                        <img class="comics__cards-img" :src="comic.thumb" :alt="comic.series">
-                        <small class="comics__cards-text">{{comic.series}}</small>
-                    </div>
-                </div>
-                <button class="comics__button comics__button--big">Load more</button>
+    <section class="comics">
+        <div class="container">
+            <button class="comics__button comics__button--position">Current Series</button>
+            <div class="comics__list">
+                <ComicsCard  v-for="(comic, index) in comics" :key="index" :series="comic.series" :thumb="comic.thumb"/>
             </div>
-        </section>
-    </main>
+            <button class="comics__button comics__button--big">Load more</button>
+        </div>
+    </section>
 </template>
 
 <script>
+import ComicsCard from "../commons/comicsCard.vue";
+
 export default {
-    name: 'BaseMain',
+    name: 'SectionCards',
+    components: {
+        ComicsCard
+    },
     data() {
         return {
             comics: [
@@ -101,58 +100,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    main {
-        .jumbotron {
-            background-image: url('../assets/img/jumbotron.jpg');
-            background-repeat: no-repeat;
-            background-position: top center;
-            height: 50vh;
-        }
+    .comics {
+        background-color: var(--secondary-color);
+        padding: .9375rem 0;
 
         .container {
             position: relative;
             text-align: center;
         }
 
-        .comics {
-            background-color: var(--secondary-color);
-            padding: .9375rem 0;
+        &__button {
+            padding: .5rem;
+            border:.0625rem solid var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--secondary-color-text);
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 700;
 
-            &__button {
-                padding: .5rem;
-                border:.0625rem solid var(--primary-color);
-                background-color: var(--primary-color);
-                color: var(--secondary-color-text);
-                text-transform: uppercase;
-                cursor: pointer;
-                font-weight: 700;
-
-                &--position {
-                    position: absolute;
-                    left: 0;
-                    top: -2.1875rem;
-                }
-
-                &--big {
-                    padding: .5rem 3.125rem;
-                }
+            &--position {
+                position: absolute;
+                left: 0;
+                top: -2.1875rem;
             }
 
-            &__cards {
-                padding: 1.25rem 0 1.875rem;
-                display: flex;
-                flex-wrap: wrap;
-
-                &-item {
-                    width: calc(100% / 6 - 2.5rem);
-                    text-align: left;
-                    margin: .625rem 1.25rem;
-                }
-
-                &-text {
-                    color: var(--secondary-color-text);
-                }
+            &--big {
+                padding: .5rem 3.125rem;
             }
+        }
+        
+        &__list {
+            padding: 1.25rem 0 1.875rem;
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 </style>

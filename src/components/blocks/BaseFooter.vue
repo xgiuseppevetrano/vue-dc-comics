@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="footer-top__link">
                     <a v-for="(shopLink, index) in shopLinks" :key="index" href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" :src="require(`../assets/img/${shopLink.src}`)" :alt="shopLink.name">
+                        <img class="footer-top__item-img" :src="require(`../../assets/img/${shopLink.src}`)" :alt="shopLink.name">
                         <small>{{shopLink.name}}</small>
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="footer-bottom__social">
                         <span class="footer-bottom__social-text">Follow us</span>
                         <a v-for="(social, index) in socials" :key="index" class="footer-bottom__social-link" href="#">
-                            <img class="footer-bottom__social-img" :src="require(`../assets/img/${social.src}`)" :alt="social.name">
+                            <img class="footer-bottom__social-img" :src="require(`../../assets/img/${social.src}`)" :alt="social.name">
                         </a>
                     </div>
                 </div>
@@ -168,7 +168,7 @@ export default {
 }
 
 .footer-center {
-    background-image: url('../assets/img/footer-bg.jpg');
+    background-image: url('../../assets/img/footer-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--secondary-color-text);
@@ -179,7 +179,7 @@ export default {
         flex-wrap: wrap;
         align-content: flex-start;
         height: 350px;
-        background-image: url('../assets/img/dc-logo-bg.png');
+        background-image: url('../../assets/img/dc-logo-bg.png');
         background-repeat: no-repeat;
         background-position: center right;
     }
