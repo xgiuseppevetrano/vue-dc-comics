@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="footer-top__link">
                     <a v-for="(shopLink, index) in shopLinks" :key="index" href="#" class="footer-top__item">
-                        <img class="footer-top__item-img" :src="require(shopLink.src)" :alt="shopLink.name">
+                        <img class="footer-top__item-img" :src="require(`../assets/img/${shopLink.src}`)" :alt="shopLink.name">
                         <small>{{shopLink.name}}</small>
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="footer-bottom__social">
                         <span class="footer-bottom__social-text">Follow us</span>
                         <a v-for="(social, index) in socials" :key="index" class="footer-bottom__social-link" href="#">
-                            <img class="footer-bottom__social-img" :src="require(social.src)" :alt="social.name">
+                            <img class="footer-bottom__social-img" :src="require(`../assets/img/${social.src}`)" :alt="social.name">
                         </a>
                     </div>
                 </div>
@@ -48,23 +48,23 @@ export default {
             shopLinks: [
                 {
                     name: 'Digital Comics',
-                    src: '../assets/img/buy-comics-digital-comics.png'
+                    src: 'buy-comics-digital-comics.png'
                 },
                 {
                     name: 'Dc merchandise',
-                    src: '../assets/img/buy-comics-merchandise.png'
+                    src: 'buy-comics-merchandise.png'
                 },
                 {
                     name: 'Subscription',
-                    src: '../assets/img/buy-comics-subscriptions.png'
+                    src: 'buy-comics-subscriptions.png'
                 },
                 {
                     name: 'Comics shop locator',
-                    src: '../assets/img/buy-comics-shop-locator.png'
+                    src: 'buy-comics-shop-locator.png'
                 },
                 {
                     name: 'Dc power pisa',
-                    src: '../assets/img/buy-dc-power-visa.svg'
+                    src: 'buy-dc-power-visa.svg'
                 }
     
             ],
@@ -118,23 +118,23 @@ export default {
             socials: [
                 {
                     name: 'facebook',
-                    src: '../assets/img/footer-facebook.png'
+                    src: 'footer-facebook.png'
                 },
                 {
                     name: 'twitter',
-                    src: '../assets/img/footer-twitter.png'
+                    src: 'footer-twitter.png'
                 },
                 {
                     name: 'youtube',
-                    src: '../assets/img/footer-youtube.png'
+                    src: 'footer-youtube.png'
                 },
                 {
                     name: 'pinterest',
-                    src: '../assets/img/footer-pinterest.png'
+                    src: 'footer-pinterest.png'
                 },
                 {
                     name: 'periscope',
-                    src: '../assets/img/footer-periscope.png'
+                    src: 'footer-periscope.png'
                 }
             ]
         }
