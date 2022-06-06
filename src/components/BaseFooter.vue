@@ -175,6 +175,10 @@ export default {
 
     &__row {
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        height: 350px;
         background-image: url('../assets/img/dc-logo-bg.png');
         background-repeat: no-repeat;
         background-position: center right;
@@ -183,7 +187,7 @@ export default {
     &__col {
         width: 10%;
         margin: 0 .625rem;
-        padding: 1.875rem 0;
+        padding: 0.775rem 0;
 
         &-title {
             margin-bottom: .625rem;
