@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import SectionCards from "../sections/sectionCards.vue";
-import SectionJumbotron from "../sections/sectionJumbotron.vue";
+import SectionCards from "../sections/SectionCards.vue";
+import SectionJumbotron from "../sections/SectionJumbotron.vue";
 
 export default {
     name: 'BaseMain',

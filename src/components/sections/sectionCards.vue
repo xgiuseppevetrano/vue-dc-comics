@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ComicsCard from "../commons/comicsCard.vue";
+import ComicsCard from "../commons/ComicsCard.vue";
 
 export default {
     name: 'SectionCards',
