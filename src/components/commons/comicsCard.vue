@@ -21,6 +21,14 @@ export default {
             width: calc(100% / 6 - 1.875rem);
             text-align: left;
             margin: .9375rem;
+
+            &:hover &-text {
+                color: var(--primary-color);
+            }
+
+            &:hover &-img {
+                opacity: 0.5;
+            }
             
             &-img {
                 width: 100%;
