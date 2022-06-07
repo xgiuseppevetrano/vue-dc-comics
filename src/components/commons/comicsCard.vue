@@ -18,11 +18,15 @@ export default {
 <style lang="scss" scoped>
     .comics {
         &__card {
-            width: calc(100% / 6 - 2.5rem);
+            width: calc(100% / 6 - 1.875rem);
             text-align: left;
             margin: .9375rem;
+            
             &-img {
                 width: 100%;
+                height: 150px;
+                object-fit: cover;
+                object-position: top;
             }
 
             &-text {
